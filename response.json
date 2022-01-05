@@ -1,0 +1,21 @@
+{
+    "title": "JSON schema for the response from a grading function.",
+    "description": "This schema is used to check whether a response from a grading function fits the basic structure.",
+    "properties": {
+        "command": {
+            "type": "string",
+            "enum": ["grade", "health"]
+        },
+        "result": {
+            "type": "object",
+            "properties": {
+                "is_correct": {"type": "boolean"},
+                "feedback": {"type": ["object", "array", "string"]}
+            },
+            "additionalProperties": false,
+            "required": ["is_correct"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["command", "result"]
+}
