@@ -14,6 +14,14 @@
             },
             "additionalProperties": false,
             "required": ["is_correct"]
+        },
+        "error": {
+            "type": "object",
+            "properties": {
+                "message": {"type": "string"}
+            },
+            "additionalProperties": true,
+            "required": ["message"]
         }
     },
     "additionalProperties": false,
