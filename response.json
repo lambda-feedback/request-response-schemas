@@ -4,7 +4,7 @@
     "properties": {
         "command": {
             "type": "string",
-            "enum": ["grade", "health"]
+            "enum": ["grade", "healthcheck"]
         },
         "result": {
             "type": "object",
