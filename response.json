@@ -10,10 +10,13 @@
             "type": "object",
             "properties": {
                 "is_correct": {"type": "boolean"},
-                "feedback": {"type": ["object", "array", "string"]}
+                "feedback": {"type": ["object", "array", "string"]},
+                "tests_passed": {"type": "boolean"},
+                "successes": {"type": "array"},
+                "failures": {"type": "array"},
+                "errors": {"type": "array"}
             },
-            "additionalProperties": false,
-            "required": ["is_correct"]
+            "additionalProperties": false
         },
         "error": {
             "type": "object",
@@ -22,8 +25,18 @@
             },
             "additionalProperties": true,
             "required": ["message"]
-        }
+        },
+        "message": {"type": "string"}
     },
     "additionalProperties": false,
-    "required": ["command"]
+    "allOf": [
+        {
+            "if": {"properties": {"command": {"const": "grade"}}},
+            "then": {"properties": {"result": {"required": ["is_correct"]}}}
+        },
+        {
+            "if": {"properties": {"command": {"const": "healthcheck"}}},
+            "then": {"properties": {"result": {"required": ["tests_passed", "successes", "failures", "errors"]}}}
+        }
+    ]
 }
