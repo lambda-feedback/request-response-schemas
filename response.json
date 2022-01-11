@@ -21,12 +21,12 @@
         "error": {
             "type": "object",
             "properties": {
-                "message": {"type": "string"}
+                "message": {"type": "string"},
+                "error_thrown": {"type": ["object", "string"]}
             },
-            "additionalProperties": true,
+            "additionalProperties": false,
             "required": ["message"]
-        },
-        "message": {"type": "string"}
+        }
     },
     "additionalProperties": false,
     "allOf": [
@@ -37,6 +37,10 @@
         {
             "if": {"properties": {"command": {"const": "healthcheck"}}},
             "then": {"properties": {"result": {"required": ["tests_passed", "successes", "failures", "errors"]}}}
+        },
+        {
+            "if": {"not": {"required": ["command", "result"]}},
+            "then": {"required": ["error"]}
         }
     ]
 }
