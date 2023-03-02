@@ -31,7 +31,7 @@
                     "type": "array"
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": true
         },
         "error": {
             "type": "object",
@@ -43,7 +43,7 @@
                     "type": ["object", "string"]
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": ["message"]
         }
     },

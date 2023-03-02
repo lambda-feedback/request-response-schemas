@@ -7,7 +7,7 @@ This repo holds the schemas used for the grading function request and response b
 - All requests from the frontend have the correct JSON structure so they can be interpreted by a grading function.
 - All grading function responses have the correct JSON structure so they can be interpeted by the frontend to show the correct answer and any feedback.
 
-## Structure
+## Structure (v1)
 
 ### Request
 
