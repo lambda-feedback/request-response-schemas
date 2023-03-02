@@ -4,7 +4,7 @@
     "properties": {
         "command": {
             "type": "string",
-            "enum": ["grade", "healthcheck"]
+            "enum": ["grade", "preview", "healthcheck"]
         },
         "result": {
             "type": "object",
@@ -13,6 +13,9 @@
                     "type": "boolean"
                 },
                 "feedback": {
+                    "type": ["object", "array", "string"]
+                },
+                "preview": {
                     "type": ["object", "array", "string"]
                 },
                 "tests_passed": {
@@ -89,6 +92,26 @@
                 "properties": {
                     "result": {
                         "required": ["tests_passed", "successes", "failures", "errors"]
+                    }
+                },
+                "anyOf": [
+                    {"required": ["result"]},
+                    {"required": ["error"]}
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "command": {
+                        "const": "preview"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "result": {
+                        "required": ["preview"]
                     }
                 },
                 "anyOf": [
