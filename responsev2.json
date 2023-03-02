@@ -23,13 +23,6 @@
             "string"
           ]
         },
-        "preview": {
-          "type": [
-            "object",
-            "array",
-            "string"
-          ]
-        },
         "tests_passed": {
           "type": "boolean"
         },
@@ -96,36 +89,6 @@
           "result": {
             "required": [
               "is_correct"
-            ]
-          }
-        },
-        "anyOf": [
-          {
-            "required": [
-              "result"
-            ]
-          },
-          {
-            "required": [
-              "error"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "command": {
-            "const": "preview"
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "result": {
-            "required": [
-              "preview"
             ]
           }
         },
