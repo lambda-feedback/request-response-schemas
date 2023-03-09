@@ -3,7 +3,7 @@
     "description": "This schema is used to check whether a response from a grading function fits the basic structure.",
     "properties": {
       "command": {
-        "const": ["eval"]
+        "const": "eval"
       },
       "result": {
         "type": "object",
