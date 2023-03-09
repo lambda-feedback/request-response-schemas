@@ -7,8 +7,7 @@
       "enum": [
         "eval",
         "healthcheck",
-        "docs",
-        "preview"
+        "docs"
       ]
     },
     "result": {
@@ -18,13 +17,6 @@
           "type": "boolean"
         },
         "feedback": {
-          "type": [
-            "object",
-            "array",
-            "string"
-          ]
-        },
-        "preview": {
           "type": [
             "object",
             "array",
@@ -130,36 +122,6 @@
               "successes",
               "failures",
               "errors"
-            ]
-          }
-        },
-        "anyOf": [
-          {
-            "required": [
-              "result"
-            ]
-          },
-          {
-            "required": [
-              "error"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "command": {
-            "const": "preview"
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "result": {
-            "required": [
-              "preview"
             ]
           }
         },
