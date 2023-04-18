@@ -7,13 +7,8 @@
                 "type": "null"
             }
         },
-        "answer": {
-            "not": {
-                "type": "null"
-            }
-        },
         "params": {"type": "object"}
     },
     "additionalProperties": false,
-    "required": ["response", "answer"]
+    "required": ["response"]
 }
