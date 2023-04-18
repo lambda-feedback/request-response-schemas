@@ -17,13 +17,6 @@
               "array",
               "string"
             ]
-          },
-          "preview": {
-            "type": [
-              "object",
-              "array",
-              "string"
-            ]
           }
         },
         "additionalProperties": true,
